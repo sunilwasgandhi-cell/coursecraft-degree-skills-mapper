@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <title>Coursecraft — Degree to career map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Coursecraft home"><span class="brand-mark">c</span><span>coursecraft<span class="brand-period">.</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item active" href="#analyzer"><span class="nav-icon">◫</span> Course analyzer</a>
+        <a class="nav-item" href="#map"><span class="nav-icon">⌘</span> Skills map</a>
+        <a class="nav-item" href="#roles"><span class="nav-icon">↗</span> Career pathways</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✳</div><strong>Building a better degree?</strong><p>Connect what you teach to what the world needs.</p><a href="#how-it-works">How it works <span>→</span></a></div>
+        <div class="user-row"><div class="avatar">A</div><div><strong>Academic team</strong><small>Curriculum workspace</small></div><span class="dots">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main" id="analyzer">
+      <header class="topbar"><div class="breadcrumbs">Workspace <span>/</span> <strong>Course analyzer</strong></div><div class="top-actions"><span class="saved"><i></i> <span id="save-status">Ready to save</span></span><button class="icon-button" aria-label="Help">?</button></div></header>
+      <div class="content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> CURRICULUM INTELLIGENCE</div>
+        <div class="page-heading"><div><h1>Make your degree<br><em>work in the world.</em></h1><p class="intro">Explore the careers your course can lead to, identify the skills employers value, and find practical ways to weave them into your curriculum.</p></div><div class="heading-art" aria-hidden="true"><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span><span class="art-core">✳</span><span class="art-star star-one">✳</span><span class="art-star star-two">✦</span></div></div>
+
+        <section class="analyzer-card" aria-labelledby="analyze-title">
+          <div class="step-label"><span>01</span> START WITH YOUR COURSE</div>
+          <h2 id="analyze-title">What degree are you developing?</h2>
+          <form id="course-form" class="search-form">
+            <label class="sr-only" for="course-input">Degree or course name</label>
+            <span class="search-symbol">⌕</span>
+            <input id="course-input" type="text" placeholder="e.g. BSc Environmental Science" autocomplete="off" required>
+            <button type="submit" class="primary-button">Analyze course <span>→</span></button>
+          </form>
+          <div class="suggestion-row"><span>Try a sample</span><button class="sample-chip" data-course="Computer Science">Computer Science <span>↗</span></button><button class="sample-chip" data-course="Business Administration">Business Administration <span>↗</span></button><button class="sample-chip" data-course="Psychology">Psychology <span>↗</span></button></div>
+        </section>
+
+        <div id="results" class="results hidden" aria-live="polite">
+          <div class="results-top"><div><div class="step-label"><span>02</span> YOUR COURSE LANDSCAPE</div><h2 id="result-title">Computer Science</h2><p class="result-subtitle">A starting-point view of career pathways and transferable skills.</p></div><div class="result-actions"><button id="export-button" class="export-button">Export plan <span>↓</span></button><button id="reset-button" class="text-button">← Change course</button></div></div>
+          <div class="insight-banner"><div class="insight-icon">✦</div><p id="course-insight">Your course can connect foundational knowledge with applied practice.</p><span class="source-tag">ILLUSTRATIVE BASELINE</span></div>
+          <div class="section-heading" id="roles"><div><span class="mini-kicker">CAREER PATHWAYS</span><h3>Where could graduates go?</h3></div><span class="section-note">Explore example roles</span></div>
+          <div id="role-grid" class="role-grid"></div>
+          <div class="section-heading skills-heading"><div><span class="mini-kicker">SKILL SIGNALS</span><h3>Skills to build into the course</h3></div><span class="section-note">Select a skill to map it</span></div>
+          <div id="skill-list" class="skill-list"></div>
+          <section class="mapping-panel" id="map">
+            <div class="mapping-head"><div><div class="step-label"><span>03</span> CURRICULUM MAPPING</div><h2>Put skills into the syllabus</h2><p>Match priority skills to existing modules, or capture a new learning experience to consider.</p></div><div class="mapping-count"><strong id="mapped-count">0</strong><span>skills mapped</span></div></div>
+            <div class="mapping-workspace"><div class="module-column"><div class="column-title">YOUR MODULES <span id="module-count">0</span></div><div id="module-list" class="module-list"></div><form id="module-form" class="add-module-form"><label class="sr-only" for="module-input">Add a course module</label><input id="module-input" type="text" placeholder="Add an existing module…"><button type="submit" aria-label="Add module">+</button></form><div class="module-hint">Add modules from your current syllabus to start mapping.</div></div><div class="unmapped-column"><div class="column-title">SKILLS TO PLACE <span id="unmapped-count">0</span></div><div id="unmapped-list" class="unmapped-list"></div><div id="empty-skills" class="empty-state">Analyze a course and select skills to begin.</div></div></div>
+            <div class="recommendations" id="recommendations"><div class="rec-icon">✦</div><div><strong>Turn a gap into a learning experience</strong><p>When skills remain unmapped, Coursecraft suggests practical activities and assessment ideas.</p></div></div>
+            <div id="suggestion-list" class="suggestion-list"></div>
+          </section>
+          <div class="disclaimer"><span>ⓘ</span><p><strong>Use this as a planning aid.</strong> Role and skill examples are illustrative, not live job-market data. Validate priorities against local employer conversations, job postings, accreditation criteria, and graduate outcomes.</p></div>
+        </div>
+        <section class="how-it-works" id="how-it-works"><div class="how-label">A PRACTICAL WORKFLOW</div><div class="how-grid"><div><span class="how-number">01</span><strong>Explore</strong><p>Start with a degree and see example career directions and skill clusters.</p></div><div><span class="how-number">02</span><strong>Map</strong><p>Connect the skills you select to the modules already in your programme.</p></div><div><span class="how-number">03</span><strong>Strengthen</strong><p>Capture gaps as course activities, assessments, or new module ideas.</p></div></div></section>
+        <footer><span>COURSECRAFT <span class="brand-period">.</span></span><span>Designed for thoughtful curriculum development</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
