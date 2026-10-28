@@ -2,9 +2,15 @@
 
 A browser-based prototype for connecting a degree course to example career pathways, skills, and curriculum mapping ideas.
 
-## Run it locally
+## Run it
 
 Open `index.html` in a modern browser. No build step or package installation is needed.
+
+## Live app
+
+The app is published at [sunilwasgandhi-cell.github.io/coursecraft-degree-skills-mapper](https://sunilwasgandhi-cell.github.io/coursecraft-degree-skills-mapper/). The public repository is [sunilwasgandhi-cell/coursecraft-degree-skills-mapper](https://github.com/sunilwasgandhi-cell/coursecraft-degree-skills-mapper).
+
+GitHub Actions deploys the static site from the `main` branch after each push. The deployment workflow is in `.github/workflows/static.yml`.
 
 ## What it does
 
@@ -21,6 +27,4 @@ Open `index.html` in a modern browser. No build step or package installation is 
 
 The course profiles are illustrative examples stored in `app.js`. They are not live job-market data, and an unfamiliar degree name receives the general profile rather than a course-specific analysis. Validate role and skill priorities with local job postings, employers, accreditation requirements, and graduate outcomes before using them for curriculum decisions.
 
-## GitHub Pages
-
-This repository is private and Pages is not enabled yet. A GitHub Pages site is publicly accessible on the internet. After you confirm that you want the app published publicly, enable GitHub Pages with the Actions source and add the deployment workflow.
+To add a tailored course profile, add an entry to `profiles` in `app.js` with an `insight`, `roles`, and `skills` array. A production version could replace this local catalogue with an evidence-backed job-posting source and an analysis service, while retaining human review and the curriculum mapping workflow.
